@@ -1,12 +1,5 @@
 @media screen and (min-width: 480px){
-  .publication-grid-buttons a{
-    margin-bottom: 0;
-    display: inline-block;
-    width: 104px;
-    &:not(:first-child){
-      margin-left: 10px;
-    }
-  }
+
       
 }
 
@@ -15,147 +8,36 @@
 }
 
 @media screen and (min-width: 992px){
-  .menu-icon a{
-    padding: 0;
-  }
-  .hero-slider-wrap{
-    bottom: 16%;
-  }
-  li.current-menu-item a, li.current-post-ancestor a{
-      position: relative;
-      &:after{
-        content: '';
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 11px 11px 11px;
-        border-color: transparent transparent #3e44a9 transparent;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
+  .main-menu{
+    font-size: 12px;
+    text-transform: uppercase;
+    & ul li{
+      padding-left: 3px;
+      padding-right: 3px;
+      &:first-child{
+        padding-left: 0;
       }
-  }
-  .publication-grid-item{
-    padding-bottom: 7rem;
-  }
-  .publication-grid-buttons{
-    position: absolute;
-    bottom: 2.5rem;
-  }
-  #modal-window.gallery .gallery-description-wrap{
-    height: 75px;
-    width: calc(100% - 120px - 40px);
+      &:last-child{
+        padding-right: 0;
+      }
+      & a{
+        color: #fff;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
 
 @media screen and (min-width: 1250px){
-  .principal-investigator-wrap{
-    position: relative;
-    margin-left: -60px;
-    margin-right: -60px;
-    padding-left: 60px;
-    padding-right: 60px;
+  .main-menu{
+    font-size: 15px;
   }
-  .principal-investigator-wrap:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: -249px;
-    width: 0;
-    height: 0;
-    border-bottom: 651px solid #3E44A9;
-    border-left: 250px solid transparent;
+  #home-hero{
+    margin-top: -300px;
+    padding-top: 440px;
+    padding-bottom: 230px;
   }
-  .principal-investigator-wrap:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: -249px;
-    width: 0;
-    height: 0;
-    border-top: 651px solid #3E44A9;
-    border-right: 250px solid transparent;
-  }
-  .menu-icon a{
-    margin-left: 20px;
-  }
-  .hero-slider-wrap{
-    bottom: 23%;
-  }
-  #projects-grid .fadeinup:nth-child(8n + 2){
-    animation-delay: 250ms;
-  }
-  #projects-grid .fadeinup:nth-child(8n + 3){
-    animation-delay: 500ms;
-  }
-  #projects-grid .fadeinup:nth-child(8n + 4){
-    animation-delay: 750ms;
-  }
-  
-  #projects-grid .fadeinup:nth-child(8n + 5){
-    animation-delay: 1000ms;
-  }
-  #projects-grid .fadeinup:nth-child(8n + 6){
-    animation-delay: 1250ms;
-  }
-  #projects-grid .fadeinup:nth-child(8n + 7){
-    animation-delay: 1500ms;
-  }
-  #projects-grid .fadeinup:nth-child(8n + 8){
-    animation-delay: 1750ms;
-  }
-  #news-grid .fadeinup:nth-child(6n + 2){
-    animation-delay: 250ms;
-  }
-  #news-grid .fadeinup:nth-child(6n + 3){
-    animation-delay: 500ms;
-  }
-  #news-grid .fadeinup:nth-child(6n + 4){
-    animation-delay: 750ms;
-  }
-  #news-grid .fadeinup:nth-child(6n + 5){
-    animation-delay: 1000ms;
-  }
-  #news-grid .fadeinup:nth-child(6n + 6){
-    animation-delay: 1250ms;
-  }
-  .courses-icon{
-    position: absolute;
-    top: 19px;
-    left: -37px;
-  }
-  .vacancy-icon{
-    position: absolute;
-    top: 19px;
-    left: -37px;
-  }
-  .gallery-wrap[data-point=true]{
-    &::after{
-      content:'';
-      width: 24px;
-      height: 24px;
-      background-color: #fff;
-      border-radius: 50%;
-      border:5px solid #3e44a9;
-      position: absolute;
-      left: -109px;
-    }
-    &::before{
-      content: attr(data-year);
-      position: absolute;
-      left: -179px;
-      color: #3E44A9;
-      font-family: Montserrat, sans-serif;
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      line-height: 16px;
-    }
-    &.now::after{
-      background-color: #04E1FE;
-    }
-  }
+
 }

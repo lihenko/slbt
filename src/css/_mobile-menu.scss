@@ -11,7 +11,7 @@
 // 10. Media Queries
 
 // Variables
-@import "variables";
+@import "menu-variables";
 
 // Globals
 .d-none {
@@ -29,7 +29,7 @@
 }
 
 // Menu
-@if $omm-show-breakpoint != "991px" {
+@if $omm-show-breakpoint != "" {
     .omni-mobile-menu,
     .toggle-btn {
         display: none;
@@ -43,11 +43,10 @@
     left: 0;
     list-style: none;
     margin-top: 0;
-    opacity: 1;
+    opacity: 0;
     padding-left: 0;
     position: fixed;
     right: 0;
-    transition: all 0.3s ease;
     @if $omm-text-alignment != "" {
         text-align: $omm-text-alignment;
     }
@@ -55,16 +54,13 @@
         text-transform: $omm-text-transform;
     }
     top: 0;
+    transition: opacity 0s ease $omm-transition-duration;
     width: $omm-menu-width;
-    z-index: 99;
-    
+    z-index: 0;
+
     li {
         background-color: transparent;
         z-index: 1;
-    }
-
-    li.current-menu-item a, li.current-post-ancestor a{
-        color: $omm-link-color-hover;
     }
 
     a,
@@ -82,7 +78,7 @@
         padding: $omm-link-padding-top-bottom $omm-link-padding-left-right;
         text-decoration: none;
         transition: all $omm-transition-duration ease;
-        @apply font-montserrat;
+
         &:hover {
             @if $omm-link-color-hover != "" {
                 color: $omm-link-color-hover;
@@ -141,7 +137,6 @@
 
 // Toggle
 .toggle-btn {
-    transform: translateY(-50%);
     align-items: center;
     @if $omm-button-position-bottom != "" {
         bottom: $omm-button-position-bottom;
@@ -161,7 +156,7 @@
         top: $omm-button-position-top;
     }
     transition: all $omm-transition-duration ease;
-    z-index: 10;
+    z-index: 2;
 
     @if $omm-text-content != "" {
         &:after {
@@ -269,7 +264,7 @@ body {
                 transition: all $omm-transition-duration ease;
             }
 
-            body {
+            .content-wrapper {
                 @if $omm-box-shadow != "" {
                     box-shadow: $omm-box-shadow;
                 }
@@ -278,7 +273,7 @@ body {
             }
         }
     } @else if $omm-menu-direction == "full" or $omm-menu-direction == "Full" {
-        body {
+        .content-wrapper {
             opacity: 1;
             transition: all $omm-transition-duration ease-in-out, z-index 0s ease $omm-transition-duration;
         }
@@ -344,10 +339,10 @@ body {
 
 
         &.menu-open {
-            body {
+            .content-wrapper {
                 opacity: 1;
                 transition: all $omm-transition-duration ease-in-out, z-index 0s ease;
-                z-index: -2;
+                z-index: -1;
             }
 
             .omni-mobile-menu {
@@ -356,7 +351,7 @@ body {
         }
     } @else {
         .omni-mobile-menu {
-            left: 100vw;
+            left: calc(100vw - #{$omm-menu-width});
         }
 
         &.menu-open {
@@ -367,7 +362,7 @@ body {
                 transition: all $omm-transition-duration ease;
             }
 
-            body {
+            .content-wrapper {
                 box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
                 left: -$omm-menu-width;
                 overflow: hidden;
@@ -383,11 +378,11 @@ body {
     .omni-mobile-menu {
         opacity: 1;
         overflow-x: hidden;
-        left: calc(100vw - #{$omm-menu-width});
+        transition: opacity 0s ease 0s;
     }
 
     @if $omm-content-selectable == false {
-        body {
+        .content-wrapper {
             pointer-events: none;
             user-select: none;
             -webkit-user-select: none;
@@ -407,7 +402,7 @@ body {
 }
 
 // Media Queries
-@if $omm-show-breakpoint != "991px" {
+@if $omm-show-breakpoint != "" {
     @media screen and (max-width: $omm-show-breakpoint) {
         .omni-mobile-menu {
             display: block;
@@ -415,42 +410,6 @@ body {
 
         .toggle-btn {
             display: flex;
-        }
-    }
-}
-
-@media screen and (min-width: 992px)  {
-  body .omni-mobile-menu{
-    display: flex;
-    position: relative;
-    height: auto;
-    opacity: 1;
-    left: 0;
-    width: auto;
-    z-index: 1;
-    & a{
-        border: none;
-    }
-    & li a{
-      border:none;
-      position: relative;
-      font-size: 15px;
-      font-weight: 500;
-      padding: 32px 12px;
-    }
-    & .omni-dropdown-toggle{
-      border:none;
-    }
-    & .omni-dropdown-menu{
-      position: absolute;
-    }
-  }
-}
-
-@media screen and (min-width: 1250px)  {
-    body .omni-mobile-menu{
-        & li a{
-            padding: 35px 26px;
         }
     }
 }

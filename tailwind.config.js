@@ -5,17 +5,17 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      'darkblue': '#31368B',
-      'blue': '#3E44A9',
+      'blue': '#0B4595',
+      'grey': '#A6A5AC',
       'white' : '#ffffff',
-      'lightblue' : '#04E1FE',
+      'violete' : '#2D2377',
       'black' : '#000000',
     },
     fontFamily: {
-      'sans': ['Cabin', 'sans-serif'],
-      'cabin': ['Cabin', 'sans-serif'],
-      'montserrat': ['Montserrat', 'sans-serif'],
-      'body': ['Cabin', 'sans-serif'],
+      'sans': ['Quattrocento Sans', 'sans-serif'],
+      'quattrocento': ['Quattrocento Sans', 'sans-serif'],
+      'poppins': ['Poppins', 'sans-serif'],
+      'body': ['Quattrocento Sans', 'sans-serif'],
     },
     fontSize: {
       micro:['12px', '13px'],
