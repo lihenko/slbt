@@ -7,6 +7,7 @@
 body, html{
   height: 100%;
   position: relative;
+  overflow-x: hidden;
 }
 
 @layer components {
@@ -182,5 +183,103 @@ body, html{
   bottom: -50px;
 }
 
+.marked-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  & li{
+    padding-left: 65px;
+    position: relative;
+    margin-bottom: 20px;
+    &::before{
+      content: url(../img/list-mark.svg);
+      position: absolute;
+      top: 0;
+      left: 0;
+
+    }
+  }
+}
+
+.why-us-bg{
+  position: absolute;
+  top: -2.5rem;
+  right: -2.5rem;
+  bottom: -2.5rem;
+  left: -2.5rem;
+  background-image: url(../img/why-us-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+#seals .slick-track
+{
+    display: flex !important;
+}
+
+#seals .slick-slide
+{
+    height: inherit !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cta{
+  & .left-column{
+    flex-basis: 100%;
+    max-width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 12px;
+    padding-right: 12px;
+    position: relative;
+    & .cta-left-bg-img{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background-image: url(../img/chat-message-info.svg);
+      background-repeat: no-repeat;
+      background-position: center left;
+      width: 100%;
+      z-index: 0;
+    }
+    & .cta-left-text{
+      flex-basis: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+    & .cta-left-button{
+      flex-basis: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+  }
+  & .right-column{
+    flex-basis: 100%;
+    max-width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.footer-menu{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  & li{
+    margin-bottom: 16px;
+    & a{
+      color: #000;
+      &:hover{
+        color: #2D2377;
+      }
+    }
+  }
+}
+
 @import "./media";
-@import "./animate.min";
