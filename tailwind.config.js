@@ -10,6 +10,8 @@ module.exports = {
       'white' : '#ffffff',
       'violete' : '#2D2377',
       'black' : '#000000',
+      'lightgrey' : '#F5F5F5',
+      'pink' : '#ECE0E0',
     },
     fontFamily: {
       'sans': ['Quattrocento Sans', 'sans-serif'],

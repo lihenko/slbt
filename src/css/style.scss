@@ -7,7 +7,6 @@
 body, html{
   height: 100%;
   position: relative;
-  overflow-x: hidden;
 }
 
 @layer components {
@@ -24,10 +23,10 @@ body, html{
       @apply text-[22px] leading-[32px] font-black font-poppins;
     }
     h4{
-      @apply text-[45px] leading-[43px] font-black font-poppins;
+      @apply text-[18px] leading-[28px] font-black font-poppins;
     }
     h5{
-      @apply text-[45px] leading-[43px] font-black font-poppins;
+      @apply text-[16px] leading-[24px] font-black font-poppins;
     }
     p{
         @apply mb-8;
@@ -280,6 +279,60 @@ body, html{
       }
     }
   }
+}
+
+
+#what-we-offer .slick-track
+{
+    display: flex !important;
+}
+
+#what-we-offer .slick-slide
+{
+    height: inherit !important;
+}
+
+#what-we-offer .slick-prev::before, #what-we-offer .slick-next::before{
+  background-color: #A6A5AC;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#what-we-offer .slick-prev, #what-we-offer .slick-next{
+  width: 50px;
+  height: 50px;
+}
+
+#what-we-offer .slick-prev{
+  left: -60px;
+}
+
+#what-we-offer .slick-next{
+  right: -60px;
+}
+
+#what-we-offer .slick-prev::before {
+  content: url(../img/slide-arrow.svg);
+}
+#what-we-offer .slick-next::before {
+  content: url(../img/slide-arrow.svg);
+  transform: rotate(180deg);
+}
+
+#what-we-offer .slick-dots li button::before{
+  color: #2D2377;
+  font-size: 40px;
+}
+
+#what-we-offer .slick-dots{
+  bottom: -50px;
+}
+
+.value-icon{
+  filter: drop-shadow(0px 20px 30px rgba(45, 35, 119, 0.12));
 }
 
 @import "./media";
