@@ -116,3 +116,11 @@ jQuery('.our-services-slider').slick({
     }
   ]
 });
+
+jQuery('.choose-menu li').on('click', function () {
+  var tab = '#' + jQuery(this).data('section');
+  jQuery('.choose-menu li').removeClass('active');
+  jQuery(this).addClass('active');
+  jQuery('.choose-info .choose-info-item').removeClass('active');
+  jQuery(tab).addClass('active');
+});

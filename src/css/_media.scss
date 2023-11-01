@@ -49,6 +49,26 @@
       max-width: 336px;
     }
   }
+  .choose-menu{
+    padding: 0;
+    display: block;
+    & li{
+      margin-bottom: 0;
+      padding-left: 65px;
+      padding-top: 35px;
+      padding-bottom: 35px;
+      font-size: 26px;
+      &:hover{
+        color: #2D2377;
+      }
+      &.active{
+        color: #fff;
+        background-color: #2D2377;
+        border-top-left-radius: 9999999px;
+        border-bottom-left-radius: 9999999px;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1250px){
