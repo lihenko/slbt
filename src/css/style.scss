@@ -43,12 +43,12 @@ body, html{
       padding-bottom: 0.5rem;
       padding-left: 1rem;
       padding-right: 1rem;
-      border:1px solid #ccc;
-      border-radius: 8px;
+      border:1px solid #2D2377;
+      background-color: #fff;
     }
     input:focus{
         @apply outline-none;
-        border-color: #E55129;
+        border-color: #0B4595;
     }
     input::placeholder{
         @apply text-black;
@@ -59,14 +59,20 @@ body, html{
       padding-bottom: 0.5rem;
       padding-left: 0.8rem;
       padding-right: 1rem;
-      border:1px solid #ccc;
-      border-radius: 8px;
+      border:1px solid #2D2377;
       height: 41px;
       background-color: #fff;
+      cursor: pointer;
     }
     select:focus{
       @apply outline-none;
-      border-color: #3e44a9;
+      border-color: #0B4595;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
     }
     textarea:focus{
         @apply outline-none;
@@ -76,11 +82,7 @@ body, html{
     }
 
     input[type='submit']{
-      @apply py-2 px-8 uppercase transition-all font-semibold text-base tracking-wide lg:py-3 max-w-full text-center inline-block  bg-blue text-white cursor-pointer;
-    }
-
-    input[type='submit']:hover{
-      @apply bg-blue text-white;
+      @apply cursor-pointer w-[271px];
     }
     
     .btn{
@@ -455,6 +457,13 @@ body, html{
   }
 }
 
-
+.form-item-select::after{
+  content: url(../img/setect-arrow.svg);
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 18px;
+  cursor: pointer;
+}
 
 @import "./media";
